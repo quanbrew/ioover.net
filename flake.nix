@@ -40,7 +40,7 @@
           LANGUAGE = "en_US.UTF-8";
           LANG = "en_US.UTF-8";
           LC_ALL = "en_US.UTF-8";
-          BUNDLE_FORCE_RUBY_PLATFORM = "true";
+          LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
           buildInputs = with pkgs; [
             zlib
