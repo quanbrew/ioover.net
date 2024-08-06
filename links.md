@@ -28,9 +28,9 @@ links:
     link: https://blog.gyara.moe/index
   - name: monsoon
     link: https://monsoon.cl/
+  - name: Mistivia
+    link: https://mistivia.com
 ---
-
-
 
 ## Cyber Node Link
 
@@ -44,19 +44,16 @@ links:
 
 你拿着这个*旧印*吧。我负责拿撬棍。
 
-
 <ul class="friendship-links">
 {%for item in page.links%}
   <li><a href="{{item.link}}">{{item.name}}</a></li>
 {%endfor%}
 </ul>
 
-
 这个时代很多人都停止写博客了。因此可能格外要抱团取暖了，**欢迎交换**！
-
 
 ## A.T. Field
 
 和我自己相关的一些链接。
 
-* [不屈之花旅店](https://paotuan.space/): TRPG相关
+- [不屈之花旅店](https://paotuan.space/): TRPG 相关
