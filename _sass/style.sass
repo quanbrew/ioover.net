@@ -1,0 +1,488 @@
+@import ./fonts
+@import ./normalize
+@import ./prism
+
+// Variables
+$main-width: 40rem
+$theme-color: #37e53d
+$bg-color: #FFFFFF
+$text-color: #212721
+$gamemaster-color: desaturate(lighten($text-color, 30%), 30%)
+$line-color: lighten($gamemaster-color, 35%)
+$hover-color: lighten($line-color, 15%)
+$hover-line-color: darken($line-color, 10%)
+$link-color: #525E95
+$title-color: #000000
+$minor-color: #999999
+$ins-color: #d4fcbc
+$del-color: #fbb
+$mark-color: lighten(yellow, 30%)
+$inline-code-bg-color: lighten(#fdf6e3, 2%)
+$fleuron-size: 1.5rem
+$cursive-font: 'Lora Italic', 'Han Kaiti GB'
+$em-font: 'Lora Italic', "Avenir Next", 'Han Heiti GB'
+$serif-font: 'Lora', Georgia, 'Times New Roman',  'Han Songti GB', serif
+$sans-font: "PT Sans", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, 'Han Heiti GB', sans-serif
+$main-font: $sans-font
+$mono-font: Iosevka, Menlo, Consolas, monospace
+$gamemaster-font: Lora, 'Han Songti'
+$title-font: $serif-font
+
+// Mixin
+=horizon-line($color, $position, $thick)
+  $h: $thick / 2
+  background: linear-gradient(to bottom, transparent calc(#{$position} - #{$h}), $color calc(#{$position} - #{$h}), $color, $color calc(#{$position} + #{$h}), transparent calc(#{$position} + #{$h}))
+
+$on-palm:          500px
+$on-laptop:        800px
+$on-wide:         1000px
+=media-query($device)
+  @media screen and (max-width: $device)
+    @content
+
+
+// Basic
+*
+  box-sizing: border-box
+
+
+html
+  min-width: 100%
+  text-rendering: optimizelegibility
+  hyphens: auto
+  font-size: 13pt
+  +media-query($on-palm)
+    font-size: 12pt
+
+body
+  font-family: $main-font
+  background-color: $bg-color
+  color: $text-color
+
+p, li
+  line-height: 1.7em
+
+h1, h2, h3, h4, h5, h6
+  font-family: $title-font
+  color: $title-color
+
+h1
+  font-size: 2rem
+  font-weight: normal
+  line-height: 2em
+
+abbr[title]
+  text-decoration: underline double
+
+a
+  color: $link-color
+  text-decoration: none
+  transition: 0.3s
+  &:active
+    color: lighten($link-color, 30%)
+  &:visited
+    color: darken($link-color, 10%)
+
+section
+  clear: both
+
+ul
+  list-style: square
+  ul
+    list-style: disc
+
+i
+  font-style: normal
+  font-family: $cursive-font
+
+mark
+  background-color: $mark-color
+
+
+ins, del
+  text-decoration: none
+  border-left: 2px solid lighten($text-color, 25%)
+  margin: 0.1em
+ins
+  background-color: $ins-color
+  box-shadow: -1px 1px 1px #bddcab
+  &:before
+    content: "+"
+    margin: 0 0.5em
+    font-family: $mono-font
+    color: lighten($text-color, 25%)
+
+s
+  text-decoration-color: transparentize($text-color, 0.5)
+
+del
+  background-color: $del-color
+  color: lighten($del-color, 5%)
+  box-shadow: -1px 1px 1px #ef9393
+  em
+    color: lighten($del-color, 12%)
+  a
+    opacity: 0.4
+  code
+    background-color: darken($inline-code-bg-color, 50%)
+  &:before
+    content: "-"
+    margin: 0 0.5em
+    text-decoration: none
+    font-family: $mono-font
+    color: lighten($text-color, 25%)
+
+
+
+em
+  font-family: $em-font
+  font-style: normal
+  color: $title-color
+  text-decoration: underline
+  text-decoration-style: double
+  text-decoration-color: lighten($title-color, 80%)
+
+
+h-hws, h-hws[hidden]
+  display: inline-block
+  user-select: none
+  width: calc(1em * 0.25)
+
+pre h-hws
+  display: none
+
+code, pre
+  font-family: $mono-font
+  background-color: $inline-code-bg-color
+  border-bottom: 0.1em solid darken($inline-code-bg-color, 10%)
+
+code
+  padding: 0.2em
+  font-size: 0.85em
+
+pre code
+  font-size: 0.85em
+  padding: 0
+  margin: 0
+  background-color: transparent
+  border: none
+
+blockquote
+  margin: 0
+  padding-left: 0.7em
+  position: relative
+  left: -1em
+  border-left: 0.3em double $line-color
+  color: lighten($text-color, 10%)
+
+hr
+  padding: 2rem 0
+  border: none
+  width: 100%
+  display: block
+  text-align: center
+  height: $fleuron-size
+  &:after
+    content: "❧"
+    color: $text-color
+    width: 10rem
+    display: inline-block
+    @include horizon-line(lighten($text-color, 0), 50%, 1px)
+    text-shadow: 0px 0px 3px $bg-color
+    font-size: $fleuron-size
+
+.octicon
+  display: inline
+
+// Layout
+html
+  padding: 1rem 2rem
+  +media-query($on-palm)
+    padding: 1em
+body
+  max-width: $main-width
+  margin: 0 auto
+
+.page-content
+  margin-bottom: 4em
+// Header
+.site-header
+  font-family: $mono-font
+  margin-bottom: 3rem
+
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .site-title
+    $logo-size: 2rem
+    background-image: url(logo.svg)
+    background-size: cover
+    display: inline-block
+    width: $logo-size
+    height: $logo-size
+    color: transparent
+    &:hover
+      background-image: url(logo.svg)
+      background-size: cover
+      background-color: $theme-color
+      // opacity: 1
+  a
+    box-shadow: none
+  a:hover
+    background: none
+    text-decoration: none
+    box-shadow: none
+  .site-nav
+    display: inline-block
+    ul
+      display: inline-block
+      list-style: none
+      padding: 0
+      li
+        display: inline-block
+        a
+          padding: 0.5em
+          border-top: 2px solid $line-color
+          &:hover
+            background-color: $hover-color
+            border-top-color: $hover-line-color
+
+
+// Article
+.page-content a
+  box-shadow: inset 0 -1px lighten($line-color, 15%)
+  &:hover, &:focus
+    box-shadow: inset 0 -2px lighten($link-color, 50%)
+
+main
+  header
+    text-align: center
+    margin-bottom: 3em
+    .page-meta
+      color: $minor-color
+      font-family: $serif-font
+      text-align: center
+
+    .feature-image
+      border-top: 1px double $line-color
+      border-bottom: 1px double $line-color
+      padding: 0
+      max-width: 100%
+
+
+
+.page-content
+  p
+    text-indent: 1em
+    text-align: justify
+  table
+    font-size: 0.8em
+    width: 100%
+    max-width: 50em
+    th, td
+      border-bottom: 1px solid $line-color
+      padding: 0.25em
+      line-height: 1.7em
+    tr:nth-child(even)
+      background-color: darken($bg-color, 2%)
+    tr:hover
+      background-color: darken($bg-color, 5%)
+  aside:not(.gamemaster)
+    position: relative
+    border-top: 0.1em solid $line-color
+    border-bottom: 0.1em solid lighten($line-color, 0%)
+    font-size: 0.8em
+    max-width: 28rem
+    margin: 1.5em 0 1.5em auto
+    padding: 0.8em
+    clear: both
+    &:before
+      content: "aside"
+      display: block
+      bottom: 0.8em
+      right: 0em
+      font-family: $mono-font
+      color: lighten($text-color, 50%)
+      position: absolute
+  h2, h3, h4, h5, h6
+    position: relative
+  .anchor
+    color: lighten($title-color, 90%)
+    &:hover
+      color: lighten($title-color, 50%)
+    &:after
+      content: "§"
+      font-family: $serif-font
+      font-weight: 100
+      position: absolute
+      left: -1.1em
+      +media-query($on-palm)
+        display: none
+
+  .section-nav
+    margin: 2em 0
+    li
+      line-height: 2em
+  .footnotes
+    font-size: 90%
+
+  .footnote
+    margin: 0.2em
+    padding: 0.1em
+  img
+    max-width: 100%
+    display: block
+    padding: 0.5em 1em
+    margin: 1rem auto
+  .right
+    float: right
+    +media-query($on-palm)
+      float: unset
+  .left
+    float: left
+    +media-query($on-palm)
+      float: unset
+
+
+// Comment
+#isso-thread
+  font-family: $sans-font
+  font-size: 11pt
+  p
+    text-indent: 0
+  a
+    box-shadow: none
+    &:hover
+      box-shadow: none
+  .notification-section
+    margin: 0.5em 0
+    input
+      margin-right: 0.25em
+
+  .avatar
+    img
+      max-width: 48px
+      max-height: 48px
+      border: 1px solid rgba(0, 0, 0, 0.2)
+      border-radius: 3px
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+
+// Gamemaster
+.gamemaster
+  text-align: justify
+  font-size: 0.9rem
+  font-family: $gamemaster-font
+  writing-mode: vertical-rl
+  color: $gamemaster-color
+  margin-bottom: 1.5em
+  margin-left: 3em
+  clear: both
+  float: right
+  height: 15em
+  overflow-x: auto
+  border-right: 0.25em double $line-color
+  p
+    font-size: 0.9rem !important
+  &::selection
+    background-color: invert($gamemaster-color)
+  &::-moz-selection
+    background-color: invert($gamemaster-color)
+
+  +media-query($on-palm)
+    width: 100%
+    float: unset
+    height: 8em
+    margin: 0 0 1.5em 0
+  -ms-overflow-style: none
+  &::-webkit-scrollbar
+    display: none
+  &::-webkit-scrollbar-button
+    display: none
+  p
+    text-indent: 1em
+
+
+// Footer
+.site-footer
+  margin-top: 4em
+  padding: 1em 0
+  clear: both
+  color: $minor-color
+
+
+// Pagination
+.pagination
+  margin: 2rem 0
+  a
+    background: none lighten($text-color, 85%)
+    display: block
+    text-decoration: none
+    box-shadow: none
+    width: 3.5em
+    text-align: center
+    margin: 1em 0
+    padding: 0.4em
+    font-size: 1rem
+    border-left: 0.1em solid $line-color
+  a:hover
+    border-left: 0.1em solid $hover-line-color
+    background: none $hover-color
+    text-decoration: none
+  .older:after
+    content: " ↤"
+  .newer:after
+    content: " ↦"
+
+// MathJax
+.MathJax_Preview
+  font-family: $mono-font
+
+// Home
+.home
+  .page-header
+    margin: 4rem 0
+    h1
+      font-size: 3rem
+      // text-align: right
+      // margin: 0.5rem 0
+      // display: block
+      // max-width: 4
+      // min-width: 2em`
+    .tagline
+      display: block
+      font-family: $serif-font
+      font-size: 1.25rem
+      margin: 0
+      // text-align: right
+
+  section
+    clear: both
+    // margin-bottom: 2em
+  .log-list
+    list-style-type: lower-roman
+    time
+      font-family: $mono-font
+      color: lighten($text-color, 50%)
+      font-size: 0.9em
+
+
+// Posts
+
+.post-list
+  padding: 0
+  list-style-type: none
+  font-size: 0.9rem
+  p
+    text-indent: 0
+  .post-link
+    font-family: $title-font
+    font-size: 1.1rem
+    // font-size: 125%
+  .post-item
+    margin-bottom: 2em
+    // .summary
+    .post-meta
+      font-family: $mono-font
+      color: lighten($text-color, 50%)
+
+

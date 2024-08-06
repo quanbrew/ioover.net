@@ -1,0 +1,10 @@
+build/
+.jekyll-metadata
+.cache/
+.DS_Store
+.vscode/
+**/.jekyll-cache
+**/.sass-cache
+**/_site
+.bundle
+vendor

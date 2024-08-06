@@ -1,0 +1,54 @@
+---
+layout: default
+title: 档案室
+pagination:
+    enabled: true
+permalink: /posts/
+---
+
+<article class="page posts">
+  <header class="post-header"><h1 class="post-title">档案室</h1></header>
+  <aside class="gamemaster" lang="zh-Hant">
+      <p>這本被塵封的魔法書到處都是這位菜鳥法師幼稚的塗鴉、對這個世界無知的妄言、甚至還試圖寫幾篇小說。</p>
+      <p>且不說寫得到底有多差勁，全都是開頭寫了一點就沒堅持下去。</p>
+  </aside>
+
+  <ul class="post-list">
+  {% for post in paginator.posts %}
+  {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
+      <li class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
+          <p><a class="post-link" itemprop="name headline title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></p>
+          {% if post.summary %}<p class="summary" itemprop="description">{{ post.summary }}</p>{% else %}<blockquote class="post-excerpt" itemprop="description">{{ post.excerpt | strip_html  | truncate: 140 }}</blockquote>{% endif %}
+          <small class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%m/%d/%Y" }}</time> <span class="category-tag">{{ post.category }}</span></small>
+      </li>
+  {% endfor %}
+  </ul>
+<footer>
+
+  {% if paginator.next_page %}
+  <aside class="gamemaster" lang="zh-Hant">
+    <p>看上去並沒有什麼好東西，劣質的魔法道具在黑市上根本沒人要。</p>
+    <p>而那些筆記裏面的內容，要麼淺顯，要麼大錯特錯。</p>
+    <p>探險者並沒有灰心，或許寶藏在更深處。</p>
+  </aside>
+  {% else %}
+  <aside class="gamemaster" lang="zh-Hant">
+    <p>……</p>
+    <p>探險者走了出來，面色不豫。</p>
+    <p>「白跑了一趟」</p>
+    <p>這個節點根本就是冒牌貨。沒有丁點讓人興奮的寶藏，只裝滿了可笑的幼稚。探險者撇了撇嘴，準備離開。</p>
+  </aside>
+  {% endif %}
+
+
+  <nav class="pagination">
+    {% if paginator.next_page %}
+        <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">旧</a>
+    {% endif %}
+    {% if paginator.previous_page %}
+        <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}">新</a>
+    {% endif %}
+  </nav>
+</footer>
+
+</article>

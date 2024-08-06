@@ -1,0 +1,46 @@
+@import ./variables
+@import ./font
+
+$han-font-path: './fonts/'
+
+$han-biaodian-hans: simp
+$han-biaodian-hant: simp
+
+// 文章區塊是否使用齊頭尾文字對齊。
+$han-article-justify: true
+
+
+$han-article-line-height: 1.7
+
+$han-section-counter:     false  // 标题计数
+$han-section-counter-toc: false  // 目录计数
+
+// 着重号形状
+// `none` || `filled` || `open`
+$han-text-emphasis-shape: filled
+
+$han-text-emphasis-color: transparentize($text-color, 0.9)
+
+// 着重号符号
+// `dot` || `circle` || `double-circle` || `triangle` || `sesame` || <string>
+$han-text-emphasis-mark: dot
+
+// 无衬线
+$han-sans:  "Avenir Next", "Segoe UI", "Helvetica Neue", Arial
+// 衬线
+$han-serif: Lora
+// 等宽
+$han-mono: 'Iosevka'
+
+$han-sans-zh:    ''
+$han-serif-zh:   'Noto Serif CJK SC', 'Noto Serif CJK', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif'
+$han-cursive-zh: ''
+$han-mono-zh:    'Sarasa Mono SC', 'Inziu Iosevka SC'
+
+// $han-article: '.post'
+@import './han-css/var'
+@import './han-css/api'
+@import './han-css/locale'
+@import './han-css/typography'
+@import './han-css/typeset'
+

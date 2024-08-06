@@ -1,0 +1,192 @@
+---
+layout: page
+title: About
+permalink: /about/
+navigation: true
+---
+<aside class="gamemaster" lang="zh-Hant">
+<p>探險者其實對這個空間的主人並沒有什麼興趣，但是出於禮節還是要了解一下的。</p>
+
+<p>只不過這個世界上優秀的法師那麼多，爲什麼要在意這個不知上進的菜鳥法師呢？</p>
+</aside>
+
+## Me
+
+只是一个阿宅。喜爱动画，非常爱玩[桌面角色扮演游戏](https://zh.moegirl.org/zh-hans/TRPG)；也是一个学艺不精的软件工程师。心中怀揣着一点不足为外人道的奇思妙想，张开 *A.T. Field* 平凡地生活着。
+
+但这只是在俗世伤的表面身份，而藏于隐秘与隐喻的月之暗面之中——
+
+我是一位*<ruby>奥术师<rp>（</rp><rt>Arcanist</rt><rp>）</rp></ruby>*！研习着晦涩的奇异技艺；小心翼翼调配原素间的平衡；时而来到洞窟挥动法杖，聆听巨龙被冒犯后的怒吼；时而踏过诸神的余晖在晶壁系间漂流…
+
+<aside class="gamemaster" lang="zh-Hant">
+<p>「滑天下之大稽」對於這段做作賣弄的自我介紹，探險者評價。他搖了搖頭。</p>
+
+<p>「如果這就是奧術師，那我就是神祇了。」</p>
+</aside>
+
+觉得这是中二病的妄语？那就继续这样认为就好。
+
+### Mail
+
+<a href="mailto:blog_about_page@ioover.net">![mail](/assets/mail.svg)</a>
+
+对于常人来说，邮箱只不过是濒临淘汰的老古董。但对于奥术师来说，邮件能穿越赛博空间的险恶迷雾，切实地将信息传达到奥术师手里。
+
+### Network
+
+在网络各处的投影。
+
+* Twitter: [ここまで](https://twitter.com/ko_ko_ma_de)
+* GitHub: [quanbrew](https://github.com/nour)
+
+### PGP
+
+奥术师的真名只有本人知道，掌控了真名就掌控了奥术师的命脉。
+
+The *fingerprint* of this key is `FFF6 DDE2 181C 1F55 E888  5470 C02D 23F1 7563 AA95`.
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+O3NsxylbbA==
+=m31a
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+## Blog
+<aside class="gamemaster" lang="zh-Hant">
+<p>「這個領域的構築技術，看起來是勉勉強強值得了解的東西」探險者想。 </p>
+</aside>
+除非特别注明，我的*原创内容*遵循「<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/">署名-非商业性使用-相同方式共享</a>」进行传播。
+
+本站对有版权插图的使用基于著作权法的合理使用原则，绝无侵犯著作权之故意，作用于别的部分的开源许可协议也不适用于此。
+
+这是个人网站，使用Jekyll构建。推荐安装「[思源宋体](https://source.typekit.com/source-han-serif/cn/)」来获得正常的阅读体验。
+
+### Credit
+
+构建这个站点用到了这些很棒工具…
+
+* [Jekyll](https://jekyllrb.com/)
+* [Lora字体](https://fonts.google.com/specimen/Lora)
+* [Iosevka字体](https://be5invis.github.io/Iosevka/)
+* [汉字标准格式](https://github.com/ethantw/Han)
+* [MathJax](https://www.mathjax.org/)
+* [Prism.js](https://prismjs.com/)
+* [Nix包管理器](https://nixos.org/)

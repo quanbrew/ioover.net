@@ -1,0 +1,19 @@
+{
+    "name": "I/O OVER",
+    "short_name": "I/O OVER",
+    "icons": [
+        {
+            "src": "/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#4d4d4d",
+    "background_color": "#4d4d4d",
+    "display": "standalone"
+}

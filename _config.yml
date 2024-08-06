@@ -1,0 +1,72 @@
+title: I/O OVER
+email: t@ioover.net
+tagline: この星の半分を真っ赤に染めた
+description: >-
+  一个不起眼的节点位于赛博空间的角落，发出的点点光亮看起来格外黯淡。
+baseurl: ""
+author: Train Train
+twitter: AT_Vector_Field
+url: https://ioover.net
+isso_url: https://ioover.net/isso
+
+lang: zh-Hans
+markdown: kramdown
+excerpt_separator: "<!--more-->"
+plugins:
+  - jekyll-feed
+  - jekyll-tidy
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jekyll-octicons
+  - jekyll-toc
+
+relative_links:
+  enabled:     true
+  collections: false
+
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
+
+date_format: "%b %-d, %Y"
+highlighter: none
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 8
+  permalink: ':num.html'
+  title: 'Page [:num]'
+  limit: 0
+  sort_reverse: true
+
+kramdown:
+  auto_ids: false
+  parse_block_html: true
+  math_engine_opts:
+    preview: true
+
+sass:
+    style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comment: true
+
+jekyll_tidy:
+  exclude: ["feed.xml"]
+  # compress_html: true
+  # ignore_env: development
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - blog.py
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

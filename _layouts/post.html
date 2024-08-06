@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="page post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="page-header">
+    <h1 class="page-title" itemprop="name headline title">{{ page.title | escape }}</h1>
+    <p class="page-meta">
+      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+      <span itemprop="author name" itemscope itemtype="http://schema.org/Person">{{ page.author | default: site.author }}</span> &middot; <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
+    </p>
+
+    {% if page.image %}<img src="{{ page.image }}" itemprop="image" alt="feature image" class="feature-image">{% endif %}
+  </header>
+
+  <div class="page-content" itemprop="articleBody">
+    {{ content | toc }}
+  </div>
+
+</article>

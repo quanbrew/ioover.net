@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-Hans" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main aria-label="Content" lang="{{ page.lang | default: site.lang | default: "zh-Hans"  }}">
+      {{ content }}
+
+    </main>
+    {%if page.comment %}
+    <script
+          data-isso="{{site.isso_url}}/"
+          data-isso-lang="zh"
+          data-isso-feed="true"
+          data-isso-avatar="false"
+          data-isso-gravatar="true"
+          data-isso-reply-notifications="true"
+          data-isso-reply-to-self="true"
+          data-title="{{page.title}}"
+          src="{{site.isso_url}}/js/embed.min.js"></script>
+    <section id="isso-thread"></section>
+    {%endif%}
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

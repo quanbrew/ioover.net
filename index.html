@@ -1,0 +1,49 @@
+---
+layout: default
+logs:
+  - text: 博客重新上线（评论坏掉了）。即将前往日本。
+    date: 2020-12-16
+  - text: NEET快一年了。
+    date: 2020-05-05
+---
+<article class="page home" itemscope itemtype="http://schema.org/Blog">
+<header class="page-header">
+  <h1 class="pag-title" itemprop="name headline title">读写终子</h1>
+  <p class="tagline">{{ site.tagline }}</p>
+</header>
+<div class="page-content">
+
+<section class="home-posts">
+<h2>欢迎</h2>
+<aside class="gamemaster" lang="zh-Hant">
+  <p>探險者誤打誤撞闖了進來。彈落身上的失真，眯眼打量了一下這裏：散落的書本、符文和觸媒昭示着這似乎是一位奧術師的庇護所。</p>
+  <p>響起了無機質的合成音…</p>
+</aside>
+<p>欢迎来到<strong>终末端子</strong>，尊敬的客人。</p>
+<p>请原谅我不能为您倒茶，我只是一段事先录制好的欢迎词。<a href="/pantry">茶水在左手边的房间里面</a>。请自己泡好，并且假装是管家在为您服务。</p>
+<p>如果客人您希望查阅主人的一些文章的话，<a href="/posts/">档案室在这里</a>。</p>
+<p>如果有什么想说的话，<a href="/visitors-book/">留言簿</a>不记得放在哪里了，客人可以找找。</p>
+<!-- <p><small>不过请小心文章中的符文陷阱，可能会造成读者恶心、狂笑等症状——绝对不是因为写得太烂，是符文陷阱。</small></p> -->
+<noscript><p>客人您看起来拒绝了<ruby>爪哇魔法刻印<rp>（</rp><rt>JavaScript</rt><rp>）</rp></ruby>的“恩赐”。这很好，除了一部分<ruby>数学符文<rp>（</rp><rt>MathJax</rt><rp>）</rp></ruby>的效力减弱、一些装饰魔法黯然失色以外，没有什么。</p></noscript>
+<!-- <p>祝您愉快。</p> -->
+</section>
+<hr>
+<section class="home-log">
+    <aside class="gamemaster" lang="zh-Hant">
+      <p>要搞清楚此處的大致情況。他從懷裏掏出一枚銀幣，用手指彈起。</p>
+      <p>「叮」一聲。銀幣划破了數層結界之後化作灰燼。</p>
+      <p>隨後，探險者伸手虛點了幾下，字符在他眼前流淌。</p>
+    </aside>
+    <p>此处有一些随手写的日志。</p>
+    <ol class="log-list">
+    {% for log in page.logs %}
+      <li><span class="log-text">{{log.text}}</span>{%if log.date%}<time datetime="{{log.date}}">{{log.date | date: "%m/%d"}}</time>{%endif%}</li>
+    {% endfor %}
+    </ol>
+    </section>
+</div>
+</article>
+
+
+
+
