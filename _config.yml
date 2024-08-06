@@ -66,6 +66,9 @@ exclude:
   - Gemfile.lock
   - blog.py
   - node_modules
+  - result
+  - .direnv/
+  - .vscode/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/

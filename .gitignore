@@ -8,3 +8,4 @@ build/
 **/_site
 .bundle
 vendor
+result

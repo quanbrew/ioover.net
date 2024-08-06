@@ -30,7 +30,7 @@ $title-font: $serif-font
 
 // Mixin
 =horizon-line($color, $position, $thick)
-  $h: $thick / 2
+  $h: calc($thick / 2)
   background: linear-gradient(to bottom, transparent calc(#{$position} - #{$h}), $color calc(#{$position} - #{$h}), $color, $color calc(#{$position} + #{$h}), transparent calc(#{$position} + #{$h}))
 
 $on-palm:          500px
@@ -393,7 +393,6 @@ main
     float: unset
     height: 8em
     margin: 0 0 1.5em 0
-  -ms-overflow-style: none
   &::-webkit-scrollbar
     display: none
   &::-webkit-scrollbar-button
