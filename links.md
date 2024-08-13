@@ -6,8 +6,6 @@ permalink: /links/
 links:
   - name: Thirteen Fathoms
     link: https://monetaphilis.github.io
-  - name: 奇想齋
-    link: http://i.nebula.moe/
   - name: 刘荣星的博客
     link: https://www.liurongxing.com
   - name: 乞丐甲隨筆
